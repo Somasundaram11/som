@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 250px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Form Validation</h2>
+  
+  <form id="loginForm" onsubmit="return validateForm()">
+    <input type="email" id="email" placeholder="Enter your email" required><br>
+    <input type="password" id="password" placeholder="Enter your password" required><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="errorMessage" class="error"></div>
+
+  <script>
+    function validateForm() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const errorMessage = document.getElementById("errorMessage");
+
+      // Check if email and password are empty
+      if (email === "" || password === "") {
+        errorMessage.textContent = "Both fields are required.";
+        return false; // Prevent form submission
+      }
+
+      // Clear error message and allow form submission if validation passes
+      errorMessage.textContent = "";
+      return true;
+    }
+  </script>
+
+</body>
+</html>

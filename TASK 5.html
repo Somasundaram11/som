@@ -1,17 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Character Counter</title>
+  <meta charset="UTF-8">
+  <title>Real-Time Character Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    textarea {
+      width: 300px;
+      height: 150px;
+      font-size: 16px;
+      padding: 10px;
+    }
+    .counter {
+      font-size: 18px;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
-  <textarea id="textArea" placeholder="Type something..." oninput="updateCount()"></textarea>
-  <p id="charCount">Characters: 0</p>
+
+  <h2>Real-Time Character Counter</h2>
+  <textarea id="textInput" oninput="updateCharacterCount()"></textarea>
+  <div id="charCount" class="counter">Characters: 0</div>
 
   <script>
-    function updateCount() {
-      const text = document.getElementById("textArea").value;
-      document.getElementById("charCount").innerText = "Characters: " + text.length;
+    function updateCharacterCount() {
+      const textInput = document.getElementById("textInput");
+      const charCount = document.getElementById("charCount");
+      const characterCount = textInput.value.length;
+      charCount.textContent = `Characters: ${characterCount}`;
     }
   </script>
+
 </body>
 </html>

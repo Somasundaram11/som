@@ -1,18 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Button Click Counter</title>
+  <meta charset="UTF-8">
+  <title>Click Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+    }
+    #counter {
+      margin-top: 20px;
+      font-size: 24px;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
+
   <button onclick="countClicks()">Click Me</button>
-  <p id="clickCount">Button Clicked: 0 times</p>
+  <div id="counter">Button Clicked: 0 times</div>
 
   <script>
     let count = 0;
+
     function countClicks() {
       count++;
-      document.getElementById("clickCount").innerText = "Button Clicked: " + count + " times";
+      document.getElementById("counter").textContent = `Button Clicked: ${count} times`;
     }
   </script>
+
 </body>
 </html>

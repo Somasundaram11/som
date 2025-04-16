@@ -1,25 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Show/Hide Password</title>
+  <meta charset="UTF-8">
+  <title>Show & Hide Password</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 200px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-left: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <input type="password" id="passwordField" placeholder="Enter Password">
+
+  <input type="password" id="passwordField" placeholder="Enter password">
   <button onclick="togglePassword()" id="toggleBtn">Show</button>
 
   <script>
     function togglePassword() {
-      const passwordInput = document.getElementById("passwordField");
-      const toggleButton = document.getElementById("toggleBtn");
+      const passwordField = document.getElementById("passwordField");
+      const toggleBtn = document.getElementById("toggleBtn");
 
-      if (passwordInput.type === "password") {
-        passwordInput.type = "text";
-        toggleButton.textContent = "Hide";
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+        toggleBtn.textContent = "Hide";
       } else {
-        passwordInput.type = "password";
-        toggleButton.textContent = "Show";
+        passwordField.type = "password";
+        toggleBtn.textContent = "Show";
       }
     }
   </script>
+
 </body>
 </html>
